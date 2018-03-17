@@ -1,10 +1,8 @@
 #/bin/bash
 
 cd ~
-echo "****************************************************************************"
-echo "* Ubuntu 16.04 is the recommended opearting system for this install.       *"
-echo "*                                                                          *"
-echo "* This script will install and configure your Omega Coin masternodes.      *"
+echo "* Ubuntu 16.04 is the recommended opearting system for this install.      *"
+echo "*                     Alphanode MN setup                                  *"
 echo "****************************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -43,21 +41,17 @@ if [[ $DOSETUP =~ "y" ]] ; then
   sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
   cd
 
-  sudo apt-get install -y ufw
-  sudo ufw allow ssh/tcp
-  sudo ufw limit ssh/tcp
-  sudo ufw logging on
-  echo "y" | sudo ufw enable
-  sudo ufw status
-
   mkdir -p ~/bin
   echo 'export PATH=~/bin:$PATH' > ~/.bash_aliases
   source ~/.bashrc
 fi
 
-wget https://github.com/omegacoinnetwork/omegacoin/releases/download/0.12.5/omegacoincore-0.12.5-linux64.tar.gz
-tar -xzf omegacoincore*.tar.gz
-sudo mv  omegacoincore*/bin/* /usr/bin
+wget wget https://github.com/alphanode/alphanode/releases/download/v2.1.0/alphanode-2.1.0-x86_64-linux-gnu.tar.gz
+sudo tar -xzf alphanode-2.1.0-x86_64-linux-gnu.tar.gz
+sudo rm -f alphanode-2.1.0-x86_64-linux-gnu.tar.gz
+sudo mv alphanode-2.1.0 alphanode
+sudo cp ~/alphanode/bin/alphanoded /usr/local/bin
+sudo cp ~/alphanode/bin/alphanode-cli /usr/local/bin
 
 echo ""
 echo "Configure your masternodes now!"
@@ -68,9 +62,9 @@ echo ""
 echo "Enter masternode private key for node $ALIAS"
 read PRIVKEY
 
-CONF_DIR=~/.omegacoincore/
-CONF_FILE=omegacoin.conf
-PORT=7777
+CONF_DIR=~/.alphanode/
+CONF_FILE=alphanode.conf
+PORT=2214
 
 mkdir -p $CONF_DIR
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> $CONF_DIR/$CONF_FILE
@@ -84,14 +78,16 @@ echo "maxconnections=256" >> $CONF_DIR/$CONF_FILE
 echo "masternode=1" >> $CONF_DIR/$CONF_FILE
 echo "" >> $CONF_DIR/$CONF_FILE
 
-echo "addnode=142.208.127.121" >> $CONF_DIR/$CONF_FILE
-echo "addnode=154.208.127.121" >> $CONF_DIR/$CONF_FILE
-echo "addnode=142.208.122.127" >> $CONF_DIR/$CONF_FILE
+echo "addnode=167.99.1.93:2214" >> $CONF_DIR/$CONF_FILE
+echo "addnode=173.199.71.115:2214" >> $CONF_DIR/$CONF_FILE
+echo "addnode=198.98.57.10:2214" >> $CONF_DIR/$CONF_FILE
+echo "addnode=199.247.0.82:2214" >> $CONF_DIR/$CONF_FILE
+echo "addnode=207.148.97.178:2214" >> $CONF_DIR/$CONF_FILE
+echo "addnode=210.211.124.189:2214" >> $CONF_DIR/
 
 echo "" >> $CONF_DIR/$CONF_FILE
 echo "port=$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeaddr=$IP:$PORT" >> $CONF_DIR/$CONF_FILE
 echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
-sudo ufw allow $PORT/tcp
 
-omegacoind -daemon
+alphanoded -daemon
