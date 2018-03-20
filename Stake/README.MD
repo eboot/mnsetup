@@ -5,7 +5,7 @@
 
 1. Open the Stake Coin Wallet Desktop.  
 2. Go to RECEIVE and create a New Address: exmaple **MN1**  
-3. Send 77777 Alphacoin to new address **MN1**.
+3. Send 77777 Stake Coin to new address **MN1**.
 4. Wait for 15 confirmations.  
 5. Open Debug console **Help -> "Debug Window"** 
 6. Type the following command: **masternode outputs** it should generate something like this **"xxxxxxxxxxxx" : "1"** save on notepad
