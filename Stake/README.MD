@@ -39,7 +39,9 @@ wget https://github.com/eboot/mnsetup/raw/master/Stake/stake_setup.sh && chmod +
 
 ## Optional if MN is not running
 Open Debug console **Help -> "Debug Window" -> masternode start-alias MN1** 
+
 or in vps
+
 copy address MN1 use command **Help -> "Debug Window" -> dumpprivkey your address MN1** save on notepad
 
 ==========
