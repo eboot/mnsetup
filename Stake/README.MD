@@ -21,8 +21,10 @@ please read code before install
 wget https://github.com/eboot/mnsetup/raw/master/Stake/stake_setup.sh && chmod +x stake_setup.sh && ./stake_setup.sh
 ```
 
+## Back to Desktop Wallet
+
 8. Go to **Masternodes** tab  
-8. Click **Create** and fill the details:  
+9. Click **Create** and fill the details:  
 * Alias: **MN1**  
 * Address: **VPS_IP:PORT**  
 * Privkey: **Masternode Private Key (masternode genkey)**  
@@ -30,8 +32,8 @@ wget https://github.com/eboot/mnsetup/raw/master/Stake/stake_setup.sh && chmod +
 * Output index:  **Second value from Step 6**  
 * Reward address: leave blank  
 * Reward %: leave blank  
-9. Click **OK** to add the masternode  
-10. Click **Start All**
+10. Click **OK** to add the masternode  
+11. Click **Start All**
 =======
 
 
