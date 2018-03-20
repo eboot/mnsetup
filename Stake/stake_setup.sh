@@ -49,7 +49,7 @@ echo ""
 echo "Download And setup stake wallet from github"
 
 git clone https://github.com/StakeDeveloper/stake
-sudo cd stake/src
+cd stake/src
 make -f makefile.unix
 sudo strip staked
 sudo cp staked /usr/local/bin
