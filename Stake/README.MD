@@ -32,8 +32,9 @@ wget https://github.com/eboot/mnsetup/raw/master/Stake/stake_setup.sh && chmod +
 * Output index:  **Second value from Step 6**  
 * Reward address: leave blank  
 * Reward %: leave blank  
-10. Click **OK** to add the masternode  
-11. Click **Start All**
+10. Click **OK** to add the masternode 
+11. Click **Update**  
+12. Click **Start All**
 =======
 
 
