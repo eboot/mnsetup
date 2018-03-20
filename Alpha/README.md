@@ -3,6 +3,7 @@
 Shell script to install an [Alphanode Masternode] on a vps server Ubuntu 16.04. Use it on your own risk. check code before install
 ***
 
+
 ## Desktop Wallet
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
@@ -24,10 +25,19 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 * Reward %: leave blank  
 9. Click **OK** to add the masternode  
 10. Click **Start All**
+=======
 
 ## Vps Installation
 
 ```
 wget https://github.com/eboot/mnsetup/raw/master/Alpha/alpha_setup.sh && chmod +x alpha_setup.sh && ./alpha_setup.sh
 
+```
+
+
+## Usage
+
+```
+alphanode-cli getinfo
+alphanode-cli masternode start
 ```
