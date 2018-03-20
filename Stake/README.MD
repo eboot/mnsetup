@@ -42,7 +42,12 @@ Open Debug console **Help -> "Debug Window" -> masternode start-alias MN1**
 
 or in vps
 
-copy address MN1 use command **Help -> "Debug Window" -> dumpprivkey your address MN1** save on notepad
+copy address MN1 use command **Help -> "Debug Window" -> dumpprivkey your address MN1** save on notepad.
+in VPS, use 
+**staked importprivkey MN1**
+**staked masternode start**
+check status
+**staked masternode status**
 
 ==========
 
