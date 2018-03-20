@@ -95,7 +95,3 @@ echo "masternodeprivkey=$PRIVKEY" >> $CONF_DIR/$CONF_FILE
 
 staked -daemon
 cd ~
-echo "wait block sync"
-echo "check using (staked getinfo)"
-echo "if wallet success sync all block"
-echo "use: staked masternode start and staked masternode status"
