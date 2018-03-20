@@ -1,0 +1,1 @@
+# Stake Coin Masternode Setup
